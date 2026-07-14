@@ -1,4 +1,5 @@
-######EcoRover
+##EcoRover
+
   1.EcoRover este un robot mobil autonom proiectat pentru explorarea și monitorizarea condițiilor de mediu în spații în care accesul frecvent al unei persoane este dificil, consumator de timp sau pur și simplu nepractic. Ideea proiectului a pornit de la necesitatea unei platforme capabile să se deplaseze independent, să observe mediul înconjurător și să transmită informații utile utilizatorului fără a fi nevoie de intervenție permanentă.
 
    2.În multe situații, precum inspectarea unor încăperi tehnice, sere, depozite sau alte spații greu accesibile, este necesară atât deplasarea prin mediu, cât și colectarea unor informații despre condițiile existente. De cele mai multe ori aceste activități sunt realizate separat, fie prin inspecție directă, fie cu echipamente dedicate pentru fiecare sarcină. EcoRover își propune să reunească aceste funcționalități într-un singur sistem, capabil să exploreze mediul, să evite obstacolele și să ofere utilizatorului o imagine de ansamblu asupra spațiului analizat.
