@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoVision | EcoRover</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="eco-visual-layer">
+    <div class="eco-orb one"></div>
+    <div class="eco-orb two"></div>
+    <div class="eco-orb three"></div>
+    <div class="eco-leaf"></div>
+    <div class="eco-leaf"></div>
+    <div class="eco-leaf"></div>
+    <div class="eco-leaf"></div>
+    <div class="eco-leaf"></div>
+  </div>
+  <div class="background-glow"></div>
+
+  <nav class="navbar">
+    <div class="brand">
+      <img src="assets/ecovision-logo.png" alt="Logo EcoVision" />
+      <span>EcoVision</span>
+    </div>
+
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Deschide meniul">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <button class="nav-btn active" data-section="home">Acasă</button>
+      <button class="nav-btn" data-section="robot">Robotul</button>
+      <button class="nav-btn" data-section="data">Date live</button>
+      <button class="nav-btn" data-section="education">Ghid senzori</button>
+      <button class="nav-btn" data-section="admin">Admin</button>
+      <button class="nav-btn" data-section="contact">Contact</button>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="page-section active">
+      <div class="hero">
+        <div class="hero-text">
+</span>
+          <h1>EcoVision, platforma care colectează datele de la EcoRover</h1>
+          <p class="hero-description">
+            EcoVision centralizează și afișează în timp real datele colectate de EcoRover, oferind informații despre calitatea aerului, condițiile de mediu și activitatea robotului.
+          </p>
+
+          <div class="hero-actions">
+            <button class="primary-btn" data-section="data">Vezi datele live</button>
+            <button class="secondary-btn" data-section="robot">Vezi robotul</button>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="robot-frame">
+            <img src="assets/ecorover-cad-cutout.png" alt="Model CAD EcoRover" />
+          </div>
+        </div>
+      </div>
+    
+</section>
+
+    <section id="robot" class="page-section">
+      <div class="two-col">
+        <div>
+          <span class="eyebrow">Prezentare robot</span>
+          <h2>EcoRover</h2>
+          <p>EcoRover este un robot autonom gândit ca o stație mobilă de monitorizare a calității aerului. În loc să măsoare aerul dintr-un singur punct fix, robotul se poate deplasa și poate colecta informații din mai multe zone.</p>
+          <p>Structura este proiectată în CAD, cu un design modular, ușor și rezistent. Componentele sunt gândite pentru printare 3D, astfel încât robotul să poată fi modificat, reparat și extins rapid.</p>
+          <p>Robotul combină senzori de aer, senzori de mediu și module de deplasare pentru a transforma datele tehnice în informații ușor de înțeles. Ideea principală este să ajute oamenii să vadă mai clar ce se întâmplă cu aerul din jurul lor.</p>
+
+          <div class="feature-list">
+            <div><span>✓</span> Șasiu modular proiectat în CAD pentru prototipare rapidă</div>
+            <div><span>✓</span> Spațiu dedicat pentru senzori de gaze, praf, temperatură și presiune</div>
+            <div><span>✓</span> Structură potrivită pentru piese printate 3D și modificări rapide</div>
+            <div><span>✓</span> Platformă superioară pregătită pentru panouri, camere sau module noi</div>
+            <div><span>✓</span> Concept educațional: explică datele, nu doar le afișează</div>
+            <div><span>✓</span> Control manual de siguranță pentru situații în care robotul se blochează</div>
+          </div>
+        </div>
+
+        <div class="robot-frame">
+          <img src="assets/ecorover-cad-cutout.png" alt="EcoRover CAD" />
+        </div>
+      </div>
+    </section>
+
+    <section id="data" class="page-section">
+      <span class="eyebrow">Date robot</span>
+      <h2>Date live de la EcoRover</h2>
+      <p class="section-description">
+        Panoul de date EcoRover oferă o vizualizare în timp real a informațiilor colectate de senzori, transformând datele tehnice într-o experiență clară și ușor de înțeles.
+      </p>
+
+      <div class="status-panel">
+        <div>
+          <span class="status-label">Calitate generală aer</span>
+          <div class="air-score"><span id="airScore">bun</span></div>
+          <p id="airStatus">Aer acceptabil pentru monitorizare.</p>
+        </div>
+        <div class="connection-box">
+          <span>Stare conexiune</span>
+          <strong id="connectionState">OFFLINE</strong>
+        </div>
+      </div>
+
+      <div class="sensor-grid">
+        <div class="sensor-card"><span>Temperatură</span><strong id="tempValue">23°C</strong><small>DHT22</small></div>
+        <div class="sensor-card"><span>Umiditate</span><strong id="humValue">48%</strong><small>DHT22</small></div>
+        <div class="sensor-card"><span>CO</span><strong id="coValue">mediu</strong><small>MQ-7</small></div>
+        <div class="sensor-card"><span>Hidrogen</span><strong id="h2Value">scăzut</strong><small>MQ-8</small></div>
+        <div class="sensor-card"><span>Calitate aer</span><strong id="airValue">bună</strong><small>MQ-135</small></div>
+        <div class="sensor-card"><span>Praf / particule</span><strong id="dustValue">PM ok</strong><small>GP2Y1010</small></div>
+        <div class="sensor-card"><span>Presiune</span><strong id="pressureValue">1013 hPa</strong><small>MS5611</small></div>
+      </div>
+
+      <div class="note">
+        Valorile afișate pot fi actualizate automat atunci când robotul este conectat la rețea, oferind o imagine rapidă asupra mediului monitorizat.
+      </div>
+    </section>
+
+    <section id="education" class="page-section">
+      <span class="eyebrow">Ghid senzori</span>
+      <h2>Ce detectează senzorii?</h2>
+      <p class="section-description">
+        EcoRover nu afișează doar numere. Scopul este ca utilizatorii să înțeleagă ce măsoară fiecare senzor și de ce acele valori contează pentru sănătate și mediu.
+      </p>
+
+      <div class="education-grid">
+        <article class="edu-card"><h3>MQ-7 • Monoxid de carbon</h3><p>Detectează CO, un gaz periculos, fără miros și fără culoare. Expunerea la valori mari poate afecta respirația și poate fi foarte toxică.</p>
+        <div class="sensor-levels">
+          <span><b>Bun:</b> sub 300</span>
+          <span><b>Mediu:</b> 300 - 600</span>
+          <span><b>Rău:</b> peste 600</span>
+        </div>
+</article>
+        <article class="edu-card"><h3>MQ-8 • Hidrogen</h3><p>Detectează prezența hidrogenului. Este util pentru observarea unor scurgeri sau acumulări de gaze inflamabile.</p>
+        <div class="sensor-levels">
+          <span><b>Bun:</b> sub 100</span>
+          <span><b>Mediu:</b> 100 - 300</span>
+          <span><b>Rău:</b> peste 300</span>
+        </div>
+</article>
+        <article class="edu-card"><h3>MQ-135 • Calitatea aerului</h3><p>Poate indica prezența unor gaze și compuși poluanți. Ajută la estimarea calității generale a aerului dintr-o zonă.</p>
+        <div class="sensor-levels">
+          <span><b>Bun:</b> sub 350</span>
+          <span><b>Mediu:</b> 350 - 700</span>
+          <span><b>Rău:</b> peste 700</span>
+        </div>
+</article>
+        <article class="edu-card"><h3>GP2Y1010 • Praf și particule</h3><p>Măsoară particule fine din aer. Praful și particulele pot irita căile respiratorii și pot afecta persoanele sensibile.</p>
+        <div class="sensor-levels">
+          <span><b>Bun:</b> sub 10</span>
+          <span><b>Mediu:</b> 10 - 25</span>
+          <span><b>Rău:</b> peste 25</span>
+        </div>
+</article>
+        <article class="edu-card"><h3>DHT22 • Temperatură și umiditate</h3><p>Arată condițiile ambientale. Temperatura și umiditatea influențează confortul, sănătatea și interpretarea altor senzori.</p>
+        <div class="sensor-levels">
+          <span><b>Temperatură bună:</b> 18°C - 26°C</span>
+          <span><b>Umiditate bună:</b> 40% - 60%</span>
+          <span><b>Atenție:</b> valori extreme pot afecta confortul</span>
+        </div>
+</article>
+        <article class="edu-card"><h3>MS5611 • Presiune atmosferică</h3><p>Măsoară presiunea aerului. Poate fi folosit pentru observații meteo și pentru înțelegerea variațiilor din mediul înconjurător.</p>
+        <div class="sensor-levels">
+          <span><b>Normal:</b> aproximativ 1000 - 1025 hPa</span>
+          <span><b>Variații:</b> pot indica schimbări meteo</span>
+          <span><b>Util:</b> pentru observarea mediului</span>
+        </div>
+</article>
+      </div></section>
+
+
+    <section id="admin" class="page-section">
+      <span class="eyebrow">Admin</span>
+      <h2>Panou de control EcoRover</h2>
+      <p class="section-description">
+        Această zonă este destinată administrării robotului și poate fi folosită pentru control manual, setări de conexiune și intervenții rapide în situații speciale.
+      </p>
+
+      <div id="adminLogin" class="admin-login">
+        <h3>Acces administrator</h3>
+        <p>Accesul este protejat pentru ca doar persoanele autorizate să poată controla robotul.</p>
+        <div class="admin-login-row">
+          <input id="adminPassword" type="password" placeholder="Parolă admin" />
+          <button id="adminLoginBtn" class="primary-btn" type="button">Deblochează</button>
+        </div>
+        <small>Panoul este destinat administratorilor proiectului.</small>
+      </div>
+
+      <div id="adminPanel" class="admin-panel hidden">
+        <div class="admin-grid">
+          <div class="admin-card">
+            <h3>Setări conexiune</h3>
+            <label>Adresă robot</label>
+            <input id="robotIpInput" type="text" placeholder="ex: 192.168.100.51" />
+            <label>Rută comandă</label>
+            <input id="robotEndpointInput" type="text" placeholder="ex: /control?cmd=" />
+            <button id="saveIpBtn" class="secondary-btn" type="button">Salvează setările</button>
+            <p id="savedIpText">IP nesetat.</p>
+          </div>
+
+          <div class="admin-card">
+            <h3>Control manual</h3>
+            
+<div class="control-plus-layout">
+  <button class="control-btn forward plus-up" data-command="forward">▲</button>
+
+  <div class="plus-middle">
+    <button class="control-btn plus-left" data-command="left">◀</button>
+
+    <button class="control-btn stop plus-stop" data-command="stop">STOP</button>
+
+    <button class="control-btn plus-right" data-command="right">▶</button>
+  </div>
+
+  <button class="control-btn backward plus-down" data-command="backward">▼</button>
+</div>
+          </div>
+
+          <div class="admin-card">
+            <h3>Mod robot</h3>
+            <button class="mode-btn active" data-mode="auto">Autonom</button>
+            <button class="mode-btn" data-mode="manual">Manual</button>
+            <p id="lastCommand">Nicio comandă selectată momentan.</p>
+          </div>
+
+          
+          <div class="admin-card">
+            <h3>Camera live</h3>
+            <label>IP ESP32-CAM</label>
+            <input id="cameraIpInput" type="text" placeholder="ex: 192.168.100.51" />
+            <button id="saveCameraBtn" class="secondary-btn" type="button">Salvează camera</button>
+
+            <div class="camera-frame">
+              <img id="cameraStream" alt="Stream ESP32-CAM" />
+              <div id="cameraPlaceholder">După salvarea IP-ului, imaginea live de la cameră va apărea aici.</div>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <h3>Siguranță</h3>
+            <p>Comanda STOP este o măsură de siguranță și poate opri rapid robotul atunci când este nevoie de intervenție.</p>
+            <button class="danger-btn" data-command="stop" type="button">STOP de siguranță</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="page-section">
+      <span class="eyebrow">Contact</span>
+      <h2>Contactează echipa EcoVision</h2>
+      <p class="section-description">
+        Dacă ai întrebări sau vrei să afli mai multe despre EcoVision și EcoRover, ne poți contacta. Suntem deschiși la sugestii, idei și feedback pentru îmbunătățirea proiectului.
+      </p>
+
+      <div class="contact-card">
+        <strong>ecovisionapp53@gmail.com</strong>
+        <div class="hero-actions">
+          <a class="primary-btn" id="mailBtn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ecovisionapp53%40gmail.com&amp;su=Mesaj%20EcoVision&amp;body=Salut!%20Am%20o%20%C3%AEntrebare%20despre%20EcoVision." target="_blank" rel="noopener">Deschide Gmail</a>
+          <button class="secondary-btn" id="copyEmailBtn" type="button">Copiază emailul</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast">Comandă trimisă.</div>
+
+<div id="mobileMenuOverlay" class="mobile-menu-overlay" aria-hidden="true">
+  <button class="mobile-overlay-link" data-section="home">Acasă</button>
+  <button class="mobile-overlay-link" data-section="robot">Robotul</button>
+  <button class="mobile-overlay-link" data-section="data">Date live</button>
+  <button class="mobile-overlay-link" data-section="education">Ghid senzori</button>
+  <button class="mobile-overlay-link" data-section="admin">Admin</button>
+  <button class="mobile-overlay-link" data-section="contact">Contact</button>
+</div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
